@@ -1,0 +1,13 @@
+{
+  "name": "vvs-unidad2-compras",
+  "version": "1.0.0",
+  "description": "Laboratorio de pruebas dinámicas con Jest para el módulo de cálculo de compras (Unidad 2).",
+  "main": "src/compras.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "rendimiento": "node scripts/rendimiento.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

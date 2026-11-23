@@ -1,0 +1,24 @@
+
+> vvs-unidad2-compras@1.0.0 test
+> jest --runInBand
+
+PASS tests/compras.test.js
+  Pruebas de calcularTotal
+    √ CP-01: cálculo normal con descuento del 10% (4 ms)
+    √ CP-02: compra sin descuento (0%) (1 ms)
+    √ CP-03: descuento del 100% debe dar 0
+    √ CP-04: redondea el total a dos decimales
+    √ CP-05: precio mínimo con una unidad
+    √ CP-06: precio negativo lanza RangeError (14 ms)
+    √ CP-07: cantidad en 0 lanza RangeError (1 ms)
+    √ CP-08: cantidad negativa lanza RangeError (1 ms)
+    √ CP-09: descuento menor a 0% lanza RangeError (1 ms)
+    √ CP-10: descuento mayor a 100% lanza RangeError (1 ms)
+    √ CP-11: precio como texto lanza TypeError (1 ms)
+    √ CP-12: valores NaN o Infinity lanzan TypeError (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       12 passed, 12 total
+Snapshots:   0 total
+Time:        1.615 s, estimated 2 s
+Ran all test suites.

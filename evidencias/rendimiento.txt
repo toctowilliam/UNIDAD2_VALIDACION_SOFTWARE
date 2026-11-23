@@ -1,0 +1,11 @@
+
+> vvs-unidad2-compras@1.0.0 rendimiento
+> node scripts/rendimiento.js
+
+Prueba de rendimiento - calcularTotal
+Sistema operativo: Windows_NT 10.0.26200 (x64)
+CPU: AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx  
+Node.js: v26.13.1
+Iteraciones: 100000
+Tiempo total: 3.30 ms
+Promedio por llamada: 0.000033 ms

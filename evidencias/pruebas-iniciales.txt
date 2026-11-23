@@ -1,0 +1,167 @@
+
+> vvs-unidad2-compras@1.0.0 test
+> jest --runInBand
+
+FAIL tests/compras.test.js
+  Pruebas de calcularTotal
+    √ CP-01: cálculo normal con descuento del 10% (5 ms)
+    √ CP-02: compra sin descuento (0%)
+    √ CP-03: descuento del 100% debe dar 0
+    × CP-04: redondea el total a dos decimales (2 ms)
+    √ CP-05: precio mínimo con una unidad
+    × CP-06: precio negativo lanza RangeError (1 ms)
+    × CP-07: cantidad en 0 lanza RangeError
+    × CP-08: cantidad negativa lanza RangeError
+    × CP-09: descuento menor a 0% lanza RangeError (1 ms)
+    × CP-10: descuento mayor a 100% lanza RangeError (1 ms)
+    × CP-11: precio como texto lanza TypeError (1 ms)
+    × CP-12: valores NaN o Infinity lanzan TypeError (1 ms)
+
+  ● Pruebas de calcularTotal › CP-04: redondea el total a dos decimales
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 50.97
+    Received: 50.9745
+
+      16 |
+      17 |   test('CP-04: redondea el total a dos decimales', () => {
+    > 18 |     expect(calcularTotal(19.99, 3, 15)).toBe(50.97);
+         |                                         ^
+      19 |   });
+      20 |
+      21 |   test('CP-05: precio mínimo con una unidad', () => {
+
+      at Object.toBe (tests/compras.test.js:18:41)
+
+  ● Pruebas de calcularTotal › CP-06: precio negativo lanza RangeError
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+      25 |   // Validación de rangos (RangeError)
+      26 |   test('CP-06: precio negativo lanza RangeError', () => {
+    > 27 |     expect(() => calcularTotal(-10, 2, 5)).toThrow(RangeError);
+         |                                            ^
+      28 |   });
+      29 |
+      30 |   test('CP-07: cantidad en 0 lanza RangeError', () => {
+
+      at Object.toThrow (tests/compras.test.js:27:44)
+
+  ● Pruebas de calcularTotal › CP-07: cantidad en 0 lanza RangeError
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+      29 |
+      30 |   test('CP-07: cantidad en 0 lanza RangeError', () => {
+    > 31 |     expect(() => calcularTotal(10, 0, 5)).toThrow(RangeError);
+         |                                           ^
+      32 |   });
+      33 |
+      34 |   test('CP-08: cantidad negativa lanza RangeError', () => {
+
+      at Object.toThrow (tests/compras.test.js:31:43)
+
+  ● Pruebas de calcularTotal › CP-08: cantidad negativa lanza RangeError
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+      33 |
+      34 |   test('CP-08: cantidad negativa lanza RangeError', () => {
+    > 35 |     expect(() => calcularTotal(10, -3, 0)).toThrow(RangeError);
+         |                                            ^
+      36 |   });
+      37 |
+      38 |   test('CP-09: descuento menor a 0% lanza RangeError', () => {
+
+      at Object.toThrow (tests/compras.test.js:35:44)
+
+  ● Pruebas de calcularTotal › CP-09: descuento menor a 0% lanza RangeError
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+      37 |
+      38 |   test('CP-09: descuento menor a 0% lanza RangeError', () => {
+    > 39 |     expect(() => calcularTotal(10, 2, -1)).toThrow(RangeError);
+         |                                            ^
+      40 |   });
+      41 |
+      42 |   test('CP-10: descuento mayor a 100% lanza RangeError', () => {
+
+      at Object.toThrow (tests/compras.test.js:39:44)
+
+  ● Pruebas de calcularTotal › CP-10: descuento mayor a 100% lanza RangeError
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: RangeError
+
+    Received function did not throw
+
+      41 |
+      42 |   test('CP-10: descuento mayor a 100% lanza RangeError', () => {
+    > 43 |     expect(() => calcularTotal(10, 2, 101)).toThrow(RangeError);
+         |                                             ^
+      44 |   });
+      45 |
+      46 |   // Validación de tipos (TypeError)
+
+      at Object.toThrow (tests/compras.test.js:43:45)
+
+  ● Pruebas de calcularTotal › CP-11: precio como texto lanza TypeError
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+      46 |   // Validación de tipos (TypeError)
+      47 |   test('CP-11: precio como texto lanza TypeError', () => {
+    > 48 |     expect(() => calcularTotal('10', 2, 0)).toThrow(TypeError);
+         |                                             ^
+      49 |   });
+      50 |
+      51 |   test('CP-12: valores NaN o Infinity lanzan TypeError', () => {
+
+      at Object.toThrow (tests/compras.test.js:48:45)
+
+  ● Pruebas de calcularTotal › CP-12: valores NaN o Infinity lanzan TypeError
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: TypeError
+
+    Received function did not throw
+
+      50 |
+      51 |   test('CP-12: valores NaN o Infinity lanzan TypeError', () => {
+    > 52 |     expect(() => calcularTotal(10, NaN, 0)).toThrow(TypeError);
+         |                                             ^
+      53 |     expect(() => calcularTotal(Infinity, 1, 0)).toThrow(TypeError);
+      54 |   });
+      55 | });
+
+      at Object.toThrow (tests/compras.test.js:52:45)
+
+Test Suites: 1 failed, 1 total
+Tests:       8 failed, 4 passed, 12 total
+Snapshots:   0 total
+Time:        1.618 s
+Ran all test suites.
